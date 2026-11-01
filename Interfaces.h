@@ -84,3 +84,19 @@ extern SEL show;
 @property (setter=_setPrefersScrollingExpandsToLargerDetentWhenScrolledToEdge:)
            BOOL _prefersScrollingExpandsToLargerDetentWhenScrolledToEdge; 
 @end
+
+// iOS 27 //
+
+@interface STUIStatusBar : UIView
+@end
+
+@interface SBApplication (FLEXing)
+- (id)processState;
+@end
+
+@interface NSObject (FLEXing)
++ (instancetype)sharedInstance;
+- (NSArray *)runningApplications;
+- (int)pid;
+- (BOOL)_hasForegroundAppWithPID:(int)pid;
+@end
